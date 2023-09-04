@@ -166,50 +166,44 @@ a {
 }
 
 .brands {
+    margin: 64px 0;
+
     .container {
         display: flex;
+        justify-content: flex-start;
         overflow: hidden;
         align-items: center;
 
         a {
+            animation: move-rtl 10s linear infinite;
+            transition: ease-in-out;
+
             img {
                 width: 150px;
                 height: auto;
                 margin: 24px;
             }
+
+            .img5,
+            .img8 {
+                width: 10px;
+            }
         }
     }
 
-    #anim {
-        animation-name: animation;
-        animation-duration: 4s;
-        animation-direction: normal;
-    }
-
-    @keyframes animation {
-        0% {
-            left: 0;
-        }
-
-        100% {
-            left: 100px;
-        }
-    }
 }
 
-
-
-@keyframes run {
+@keyframes move-rtl {
     0% {
-        left: 0;
+        transform: translateX(0);
     }
 
     50% {
-        left: 100%;
+        transform: translateX(-380%);
     }
 
     100% {
-        left: 0;
+        transform: translateX(0);
     }
 }
 
