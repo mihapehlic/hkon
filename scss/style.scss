@@ -1,6 +1,10 @@
 @import 'config';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+::selection {
+    background: $dark-color;
+    color: #fff;
+}
 
 * {
     box-sizing: border-box;
@@ -36,7 +40,7 @@ a {
 
         .logo {
             height: 40px;
-            width: 30px;
+            width: 35px;
         }
 
         ul {
@@ -73,8 +77,8 @@ a {
             }
 
             p {
-                font-size: 1.2rem;
-                line-height: 1.5;
+                font-size: 1.5rem;
+                line-height: 1.6;
                 margin-bottom: 24px*2;
                 opacity: 85%;
                 font-weight: 300;
@@ -96,6 +100,7 @@ a {
                 background-color: $light-color;
                 border: 1px solid $dark-color;
                 color: $dark-color;
+                letter-spacing: 3.3px;
                 transition: 0.3s;
             }
         }
@@ -119,6 +124,34 @@ a {
     background-color: $beige-color;
 
     .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .showcase-container {
+            display: grid;
+            height: 100%;
+            margin-left: 36px;
+
+            h2 {
+                font-size: 2.7rem;
+                align-self: flex-end;
+                margin-bottom: 24px;
+                font-weight: 500;
+                line-height: 1.4;
+            }
+
+            p {
+                font-size: 1.3rem;
+                line-height: 1.5;
+                margin-bottom: 24px*2;
+                opacity: 85%;
+                font-weight: 300;
+            }
+
+            a {
+                align-items: flex-start;
+            }
+        }
 
         img {
             object-fit: cover;
@@ -129,6 +162,54 @@ a {
             margin: 64px 0;
         }
 
+    }
+}
+
+.brands {
+    .container {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+
+        a {
+            img {
+                width: 150px;
+                height: auto;
+                margin: 24px;
+            }
+        }
+    }
+
+    #anim {
+        animation-name: animation;
+        animation-duration: 4s;
+        animation-direction: normal;
+    }
+
+    @keyframes animation {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: 100px;
+        }
+    }
+}
+
+
+
+@keyframes run {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
     }
 }
 
